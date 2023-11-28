@@ -1,0 +1,99 @@
+
+Postman Publish link: https://documenter.getpostman.com/view/25035029/2s9YeG5qqa
+
+1. Create a Room:
+Endpoint: POST /create-room
+
+URL:  http://localhost:3001/create-room
+
+use this example json data for create-room
+
+{
+  "roomName": "Conference Room A",
+  "seats": 20,
+  "amenities": ["Projector", "Whiteboard"],
+  "pricePerHour": 50
+}
+
+{
+  "roomName": "Conference Room B",
+  "seats": 20,
+  "amenities": ["Projector", "Whiteboard"],
+  "pricePerHour": 50
+}
+
+{
+  "roomName": "Conference Room C",
+  "seats": 20,
+  "amenities": ["Projector", "Whiteboard"],
+  "pricePerHour": 50
+}
+
+
+2. Book a Room:
+Endpoint: POST /book-room
+
+URL: http://localhost:3001/book-room
+
+{
+  "customerName": "Saranraj",
+  "date": "2023-12-01",
+  "startTime": "10:00",
+  "endTime": "12:00",
+  "roomID": "Conference Room A"
+}
+
+{
+  "customerName": "Gokul",
+  "date": "2023-12-01",
+  "startTime": "10:00",
+  "endTime": "12:00",
+  "roomID": "Conference Room A"
+}
+
+{
+  "customerName": "Saranraj",
+  "date": "2023-12-02",
+  "startTime": "10:00",
+  "endTime": "12:00",
+  "roomID": "Conference Room A"
+}
+
+{
+  "customerName": "hari",
+  "date": "2023-12-02",
+  "startTime": "12:00",
+  "endTime": "14:00",
+  "roomID": "Conference Room A"
+}
+
+change the date and time to check overlapping error
+
+
+3.List All Rooms with Booked Data:
+
+URL: http://localhost:3001/list-rooms
+
+Endpoint: GET /list-rooms
+No request body required.
+
+
+
+4.List All Customers with Booked Data:
+
+URL: http://localhost:3001/list-customers
+
+Endpoint: GET /list-customers
+No request body required.
+
+
+5.List Customer Booking History:
+
+URL: http://localhost:3001/customer-booking-history/Saranraj
+
+change name according to the data
+
+Endpoint: GET /customer-booking-history/:customerName
+Replace :customerName with an actual customer name.
+
+Example: /customer-booking-history/Saranraj
