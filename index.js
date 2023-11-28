@@ -8,9 +8,12 @@
 // Install express and create an instance of the app
 const express=require('express');
 const app=express();
+const cors=require('cors')
 
 // Middleware to parse incoming JSON data
+app.use(cors());
 app.use(express.json());
+
 
 // Data storage for rooms and bookings
 const rooms =[];
